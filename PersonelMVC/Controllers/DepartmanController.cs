@@ -17,7 +17,18 @@ namespace PersonelMVC.Controllers
 
         public ActionResult Test()
         {
-            return View();
+            var departman = new Departman() { Id = 1, Ad = "Bilgi işlem" };
+            return RedirectToAction("Index", "Personel", new { SortBy  = "Maas"});
+        }
+
+        public ActionResult Sil(int departmanId)
+        {
+            return Content("Gelen Id: " + departmanId);//Query String göndererek yazılabilir. Ya da route config'te değişiklik yapılabilir ama mantıksız bir çözüm.
+        }
+
+        public ActionResult Update(int departmanId, string ad)
+        {
+            return Content("DepartmanId: " + departmanId + "Ad: " + ad);
         }
     }
 }
