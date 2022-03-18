@@ -13,6 +13,20 @@ namespace PersonelMVC
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapMvcAttributeRoutes();
+
+            //routes.MapRoute(
+            //    name: "Anasayfa",
+            //    url: "",
+            //    defaults: new { controller = "Departman", action = "Merhaba" }
+            //);
+
+            //routes.MapRoute(
+            //    name: "PersonelListesi",
+            //    url: "personel/liste/{siralama}/{sayfa}",
+            //    defaults: new { controller = "Personel", action = "PersonelListesi" }
+            //);
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

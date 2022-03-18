@@ -9,6 +9,7 @@ namespace PersonelMVC.Controllers
 {
     public class DepartmanController : Controller
     {
+        [Route("")]
         public ActionResult Merhaba()
         {
             var departman = new Departman() { Id = 5, Ad = "Bilgi işlem" };
