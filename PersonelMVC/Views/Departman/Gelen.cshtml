@@ -1,0 +1,26 @@
+﻿<!--@using PersonelMVC.Models-------------ViewData ile ViewBag çok kullanmamalıyız-->
+@model PersonelMVC.ViewModels.DepartmanDetayViewModel
+@{
+    Layout = null;
+    //var gelenDepartman = (Departman)ViewBag.Departman;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Gelen</title>
+</head>
+<body>
+    <h3>Departman Detay Sayfası</h3>
+    <h4>Id: @Model.Departman.Id - @Model.Departman.Ad</h4>
+    <ul>
+        @foreach (var personel in Model.Personeller)
+        {
+            <li>@personel.Ad</li>
+        }
+
+    </ul>
+</body>
+</html>

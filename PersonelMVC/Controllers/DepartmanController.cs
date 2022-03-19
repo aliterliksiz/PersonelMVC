@@ -1,4 +1,5 @@
 ﻿using PersonelMVC.Models;
+using PersonelMVC.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,27 +10,27 @@ namespace PersonelMVC.Controllers
 {
     public class DepartmanController : Controller
     {
-        [Route("")]
+        public ActionResult Gelen(int id)
+        {
+            var departman = new Departman() { Id = id, Ad = "Bilgi işlem" };
+            //ViewBag.Departman = departman;
+            //ViewBag.Ali = "Terliksiz";
+            var personeller = new List<Personel>()
+            {
+                new Personel(){Ad="Personel - 1"},
+                new Personel(){Ad="Personel - 2"},
+                new Personel(){Ad="Personel - 3"}
+            };
+            var model = new DepartmanDetayViewModel()
+            {
+                Departman = departman,
+                Personeller = personeller
+            };
+            return View(model);
+        }
         public ActionResult Merhaba()
         {
-            var departman = new Departman() { Id = 5, Ad = "Bilgi işlem" };
-            return View(departman);  // View --> Tarayıcıya HTML çıktı dönderen bir Action Result tipidir.
-        }
-
-        public ActionResult Test()
-        {
-            var departman = new Departman() { Id = 1, Ad = "Bilgi işlem" };
-            return RedirectToAction("Index", "Personel", new { SortBy  = "Maas"});
-        }
-
-        public ActionResult Sil(int departmanId)
-        {
-            return Content("Gelen Id: " + departmanId);//Query String göndererek yazılabilir. Ya da route config'te değişiklik yapılabilir ama mantıksız bir çözüm.
-        }
-
-        public ActionResult Update(int departmanId, string ad)
-        {
-            return Content("DepartmanId: " + departmanId + "Ad: " + ad);
+            return Content("Anasayfa");
         }
     }
 }

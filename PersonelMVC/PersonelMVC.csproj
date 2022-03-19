@@ -99,13 +99,14 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Departman.cs" />
+    <Compile Include="Models\Personel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\DepartmanDetayViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
-    <Content Include="Views\Departman\Merhaba.cshtml" />
-    <Content Include="Views\Departman\Test.cshtml" />
+    <Content Include="Views\Departman\Gelen.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

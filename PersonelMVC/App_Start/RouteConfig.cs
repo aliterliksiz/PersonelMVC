@@ -15,17 +15,17 @@ namespace PersonelMVC
 
             routes.MapMvcAttributeRoutes();
 
-            //routes.MapRoute(
-            //    name: "Anasayfa",
-            //    url: "",
-            //    defaults: new { controller = "Departman", action = "Merhaba" }
-            //);
+            routes.MapRoute(
+                name: "Anasayfa",
+                url: "",
+                defaults: new { controller = "Departman", action = "Merhaba" }
+            );
 
-            //routes.MapRoute(
-            //    name: "PersonelListesi",
-            //    url: "personel/liste/{siralama}/{sayfa}",
-            //    defaults: new { controller = "Personel", action = "PersonelListesi" }
-            //);
+            routes.MapRoute(
+                name: "PersonelListesi",
+                url: "personel/liste/{siralama}/{sayfa}",
+                defaults: new { controller = "Personel", action = "PersonelListesi" }
+            );
 
             routes.MapRoute(
                 name: "Default",
